@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: was
+  labels:
+    name: django
+spec:
+  containers:
+  - name: django
+    image: aiden103/msa:v3
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+    ports:
+      - containerPort: 8000

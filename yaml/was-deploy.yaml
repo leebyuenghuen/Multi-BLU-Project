@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: was
+  # namespace: back-end
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: django
+  template:
+    metadata:
+      labels:
+        app: django
+    spec:
+      containers:
+      - name: was
+        image : 940168446867.dkr.ecr.ap-southeast-1.amazonaws.com/cloud02:login
+        imagePullPolicy: Always
+        # resources:
+        #   limits:
+        #     memory: "128Mi"
+        #     cpu: "500m" 
+        ports:
+        - containerPort: 8000
+      # initContainers:
+      # - name: init-db-svc
+      #   image: busybox:1.28
+      #   command: ['sh', '-c', 'until nslookup mysql-0.mysql-svc.back-end.svc.cluster.local; do echo waiting for mysql-svc; sleep 2; done;']
+      # - name: init-redis-svc
+      #   image: busybox:1.28
+      #   command: ['sh', '-c', 'until nslookup redis-svc.default.svc.cluster.local; do echo waiting for redis-svc; sleep 2; done;']
