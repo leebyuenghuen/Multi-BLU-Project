@@ -15,12 +15,12 @@ spec:
     spec:
       containers:
       - name: was
-        image : 940168446867.dkr.ecr.ap-southeast-1.amazonaws.com/cloud02:login
+        image : 940168446867.dkr.ecr.ap-southeast-1.amazonaws.com/cloud02:apitest_1
         imagePullPolicy: Always
-        # resources:
-        #   limits:
-        #     memory: "128Mi"
-        #     cpu: "500m" 
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m" 
         ports:
         - containerPort: 8000
       # initContainers:

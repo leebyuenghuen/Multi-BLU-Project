@@ -1,0 +1,26 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress
+  # namespace: front-end
+  annotations:
+    kubernetes.io/ingress.class: alb
+    alb.ingress.kubernetes.io/target-type: ip
+    alb.ingress.kubernetes.io/scheme: internet-facing
+# SSL settings
+    # alb.ingress.kubernetes.io/listen-ports: '[{"HTTP":80}, {"HTTPS" :443}]'
+    # alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:eu-central-1:940168446867:certificate/c89aa90c-72ce-456a-b8fe-a65fa861a13f
+    # alb.ingress.kubernetes.io/ssl-redirect: '443'
+spec:
+  rules:
+  - host: cloud02.byjordy.net
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: djangoapi
+            port: 
+              number: 8000
+
