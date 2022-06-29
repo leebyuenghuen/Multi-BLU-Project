@@ -7,4 +7,6 @@
 ## 공동 작업 Organization
 - 링크 : https://github.com/2zyworld/Cloud
 
-## 1. 설계
+## 1. 구성도
+![image](https://user-images.githubusercontent.com/97427442/176380663-944ad726-006e-47c4-a213-ab41b5e1aa80.png)
+![image](https://user-images.githubusercontent.com/97427442/176380918-b6c9a9af-5cfb-4847-b710-b9e1b7e3192c.png)
